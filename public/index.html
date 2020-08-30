@@ -5,7 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>万年历</title>
+    <style type="text/css">
+      @media screen and (min-width: 375px) {
+        html {
+          font-size: 100px;
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>
@@ -15,3 +22,9 @@
     <!-- built files will be auto injected -->
   </body>
 </html>
+<script>
+  let minWidth = document.documentElement.clientWidth || document.body.clientWidth
+  let dom = document.getElementsByTagName('html')[0]
+
+  dom.style.fontSize = 100/375 * minWidth + 'px'
+</script>
